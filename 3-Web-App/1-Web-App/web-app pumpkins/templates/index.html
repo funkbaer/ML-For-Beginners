@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Pumpkin Color Prediction Application </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  </head>
+
+  <body>
+    <div class="grid">
+
+      <div class="box">
+
+        <p>Todo: rewrite Text and change inputs, first build model! According to the number of seconds, latitude and longitude, which country is likely to have reported seeing a UFO?</p>
+        <p>Inputs: </p>
+        <form action="{{url_for('train')}}" method="get">
+            <button type="train" class="btn">Train model</button>
+        </form>
+        <form action="{{ url_for('predict')}}" method="post">
+          <label for="city_name">City Name</label>
+          <select id="city_name" name="city_name">
+            <option value="BALTIMORE">Baltimore</option>
+            <option value="ATLANTA">Atlanta</option>
+            <option value="BOSTON">Boston</option>
+            <option value="CHICAGO">Chicago</option>
+            <option value="COLUMBIA">COLUMBIA</option>
+            <option value="LOS ANGELES">LOS ANGELES</option>
+            <option value="NEW YORK">NEW YORK</option>
+            <option value="DETROIT">DETROIT</option>
+            <option value="DALLAS">DALLAS</option>
+            <option value="MIAMI">MIAMI</option>
+            <option value="SAN FRANCISCO">SAN FRANCISCO</option>
+            <option value="PILADELPHIA">PILADELPHIA</option>
+            <option value="ST. LOUIS">ST. LOUIS</option>
+          </select>
+          <label for="item_size">Item Size</label>
+          <select id="item_size" name="item_size">
+            <option value="med">Medium</option>
+            <option value="lge">Large</option>
+            <option value="sml">Small</option>
+            <option value="xlge">Extra Large</option>
+            <option value="med-lge">Medium Large</option>
+            <option value="jbo">Jumbo</option>
+            <option value="exjbo">Extra Jumbo</option>
+          </select>
+          <button type="submit" class="btn">Predict color of pumpkin</button>
+        </form>
+
+        <p>{{ prediction_text }}</p>
+
+      </div>
+
+    </div>
+
+  </body>
+</html>
