@@ -355,3 +355,9 @@ MigrationBackup/
 
 # Mac-specific
 .DS_Store
+4-Classification/movie_recommendation/data/genome-scores.csv
+4-Classification/movie_recommendation/data/genome-tags.csv
+4-Classification/movie_recommendation/data/links.csv
+4-Classification/movie_recommendation/data/movies.csv
+4-Classification/movie_recommendation/data/ratings.csv
+4-Classification/movie_recommendation/data/tags.csv
