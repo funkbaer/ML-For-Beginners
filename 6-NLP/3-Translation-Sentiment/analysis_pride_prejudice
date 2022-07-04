@@ -1,0 +1,5 @@
+from textblob import TextBlob
+
+txt_file = open(r"D:\repositories\ML-For-Beginners\6-NLP\3-Translation-Sentiment\pride_and_prejudice.txt", "r")
+str_data = txt_file.read()
+print(type(str_data))
