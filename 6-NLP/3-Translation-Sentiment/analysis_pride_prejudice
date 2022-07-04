@@ -1,5 +1,19 @@
 from textblob import TextBlob
+import numpy as np
 
-txt_file = open(r"D:\repositories\ML-For-Beginners\6-NLP\3-Translation-Sentiment\pride_and_prejudice.txt", "r")
+txt_file = open(r"D:\repositories\ML-For-Beginners\6-NLP\3-Translation-Sentiment\pride_and_prejudice.txt", "r", encoding='utf-8')
 str_data = txt_file.read()
-print(type(str_data))
+txt_data = TextBlob(str_data)
+
+lst_sentences = txt_data.sentences
+lst_sentiments = []
+for sentence in lst_sentences:
+    lst_sentiments.append(float(sentence.sentiment.polarity))
+
+arr_sentiments = np.array(lst_sentiments)
+
+pos = np.sum(arr_sentiments >=0, axis=0)
+negs = np.sum(arr_sentiments <= 0, axis=0)
+
+print(f"Number of positive sentiments: {pos}")
+print(f"Number of negative sentiments {negs}")
