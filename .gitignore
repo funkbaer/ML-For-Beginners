@@ -365,3 +365,5 @@ MigrationBackup/
 6-NLP/data/Hotel_Reviews.csv
 6-NLP/data/Hotel_Reviews_Filtered.csv
 6-NLP/data/Hotel_Reviews_NLP.csv
+7-TimeSeries/2-ARIMA/working/data/darwin.txt
+7-TimeSeries/data/darwin.txt
